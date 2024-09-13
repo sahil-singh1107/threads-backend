@@ -4,8 +4,9 @@ import {User} from "./user"
 async function createApolloGraphqlServer() {
     const gqlServer = new ApolloServer({
         typeDefs: `
+            ${User.typeDefs}
             type Query {
-                hello: String
+                ${User.queries}
             }
             type Mutation {
                 ${User.mutations}
