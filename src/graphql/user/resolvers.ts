@@ -1,6 +1,6 @@
 import UserService, {CreateUserPayload} from "../../services/user";
 
-const queries = {
+export const queries = {
     getUserToken: async (_:any, payload: {email: string, password: string}) => {
         const token = await UserService.getUserToken({
             email: payload.email,
@@ -18,7 +18,7 @@ const queries = {
     }
 }
 
-const mutations = {
+export const mutations = {
     createUser: async (_: any, payload: CreateUserPayload) => {
         const res = await UserService.createUser(payload);
         return res.id;
